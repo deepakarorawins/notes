@@ -1,7 +1,39 @@
 # notes
 Useful commands and notes
 
-To kill all instance of any program on mac terminal: - 
+<b>To kill all instance of any program on mac terminal: - </b>
 pkill -f <name of program>
 e.g. "pkill -f chromedriver-mac-64bit"
 or "pkill -f Google Chrome Helper"
+
+### Start Genymotion Emulator via terminal
+
+<b>To get all emulator's name and id: -</b> "VBoxManage list vms"
+
+<b>To start emulator using name:</b> - "open -a /Applications/Genymotion.app/Contents/MacOS/player.app/ --args --vm-name 'Samsung Galaxy S9'"
+
+<b>To start emulator using id: -</b> "open -a /Applications/Genymotion.app/Contents/MacOS/player.app/ --args --vm-name 'd219161e-00b1-41d9-954b-aeeab7bd8e0d'"
+
+
+
+
+
+
+
+
+### Find appPackage and appActivity name of your App
+
+<b>To get all connected device's name and id: -</b> "adb devices"
+
+Now run <b>"adb shell"</b>
+
+Now in your mobile phone, open the app for which you want to find the appPackage and appActivity.
+
+Now run this command: dumpsys window windows | grep -E 'mCurrentFocus'
+
+or 
+
+dumpsys window windows | grep -E 'mFocusedApp'
+
+appPackage starts with com. and ends before backshash (/) and then comes activity name.
+
