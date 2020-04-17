@@ -37,3 +37,23 @@ dumpsys window windows | grep -E 'mFocusedApp'
 
 appPackage starts with com. and ends before backshash (/) and then comes activity name.
 
+
+
+### Jenkins Troubleshoot
+
+Issue: - java.lang.NoSuchMethodError: No such DSL method 'httpRequest'
+
+Solution: - Install "HTTP Request Plugin"
+
+
+Issue: - java.lang.IllegalStateException: Authentication 'Nexus' doesn't exist anymore
+Solution: - Create a new Credential in Jenkins named Nexus with username <nexusupload> and password <Password1>.
+  
+Issue: - java.lang.NoSuchMethodError: No such DSL method 'findFiles' found among steps 
+Solution: - Install "Pipeline Utility Steps" plugin
+
+Issue: - ERROR: Could not find credentials entry with ID 'Nexus'
+Solution: - Jenkins --> Credentials --> System --> Global Credentials (little down arrow) --> Add Credentials --> Fill in User Name, Password, id
+
+
+
