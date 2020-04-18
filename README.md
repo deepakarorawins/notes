@@ -55,5 +55,22 @@ Solution: - Install "Pipeline Utility Steps" plugin
 Issue: - ERROR: Could not find credentials entry with ID 'Nexus'
 Solution: - Jenkins --> Credentials --> System --> Global Credentials (little down arrow) --> Add Credentials --> Fill in User Name, Password, id
 
+.
+.
+.
+.
+
+
+## Maven
+Issue: - [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+Solution: - This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to use a specific file encoding. So eliminating the warning is simply a matter of finding out which plugin emits it and how to configure the file encoding for it. This is as easy as adding the following property to your POM (or one of its parent POMs):
+```xml
+<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+</properties>
+```
+Then we don't need encoding entries in the plugin configurations <encoding>${encoding}</encoding>
+
 
 
