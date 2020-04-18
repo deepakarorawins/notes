@@ -72,5 +72,30 @@ Solution: - This or a similar warning is emitted by a plugin that processes plai
 ```
 Then we don't need encoding entries in the plugin configurations <encoding>${encoding}</encoding>
 
+Issue: - In pom.xml
+Plugin execution not covered by lifecycle configuration: com.github.webdriverextensions:webdriverextensions-maven-plugin:3.2.0:install-drivers (execution: default, phase: generate-sources)
+Solution: - A new syntax has been introduced to simplify lifecycle mapping metadata for plugin executions, using processing instructions within plugin/executions/execution nodes.
+__e.g.__: - 
+``` xml
+<execution>
+	<?m2e execute onConfiguration?>
+	<goals>
+		<goal>install-drivers</goal>
+	</goals>
+</execution>
+```
+
+Supported syntax:
+
+* ``` <?m2e ignore?> ``` this execution will be ignored;
+* ``` <?m2e execute?> ``` this execution will be executed once on project import;
+* ``` <?m2e execute onConfiguration?> ``` this execution will be executed on every Project Configuration update;
+* ``` <?m2e execute onIncremental?> ``` this execution will be executed on every incremental build;
+* ``` <?m2e execute onConfiguration,onIncremental?> ``` this execution will be executed on every Project Configuration update and every incremental build;
+* ``` <?m2e configurator configuratorId?> ``` this execution will be delegated to the matching m2e configurator.
+Each instruction can be placed in the <execution> node, this way it applies on this exact execution or on any execution of the same plugin with the same executionId in child pom. It can also be placed in a <plugin> node, this way it acts the same as a dedicated <pluginManagement> section which lists all goals of this plugin.
+
+Please be aware there are currently no Quick Fixes available to automatically inject these new instructions when a “Plugin Execution Not Covered” error marker is found.
+
 
 
