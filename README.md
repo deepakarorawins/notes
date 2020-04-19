@@ -97,5 +97,13 @@ Each instruction can be placed in the <execution> node, this way it applies on t
 
 Please be aware there are currently no Quick Fixes available to automatically inject these new instructions when a “Plugin Execution Not Covered” error marker is found.
 
+### Chrome Driver
+Issue: - “chromedriver” cannot be opened because the developer cannot be verified.
+
+Solution: - This trick will work with any other file also
+* Ctrl + Click the chromdriver file.
+* Select Open on shortcut menu.
+* Click Open on the dialog.
+
 
 
