@@ -105,5 +105,6 @@ Solution: - This trick will work with any other file also
 * Select Open on shortcut menu.
 * Click Open on the dialog.
 
-
+### XPATH
+@FindBy(xpath = "//XCUIElementTypeStaticText[@name='ElementName']/../following-sibling::XCUIElementTypeOther")
 
