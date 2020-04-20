@@ -106,6 +106,8 @@ Solution: - This trick will work with any other file also
 * Click Open on the dialog.
 
 ### XPATH
+
+__Parent Element (../)__
 @FindBy(xpath = "//XCUIElementTypeStaticText[@name='MyElementName']/../following-sibling::XCUIElementTypeOther")
 private MobileElement myElement;
 
