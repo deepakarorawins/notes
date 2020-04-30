@@ -111,3 +111,5 @@ __Parent Element (../)__
 @FindBy(xpath = "//XCUIElementTypeStaticText[@name='MyElementName']/../following-sibling::XCUIElementTypeOther")
 private MobileElement myElement;
 
+Xpath=//*[@id='rt-feature']//parent::div
+
