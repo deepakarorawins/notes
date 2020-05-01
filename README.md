@@ -107,6 +107,8 @@ Solution: - This trick will work with any other file also
 
 ### XPATH
 
+https://stackoverflow.com/questions/28237694/xpath-get-parent-node-from-child-node
+
 __Parent Element (../)__
 @FindBy(xpath = "//XCUIElementTypeStaticText[@name='MyElementName']/../following-sibling::XCUIElementTypeOther")
 private MobileElement myElement;
