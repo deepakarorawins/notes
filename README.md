@@ -115,3 +115,10 @@ private MobileElement myElement;
 
 Xpath=//*[@id='rt-feature']//parent::div
 
+
+### Path separator in properties file
+The Java properties file format dictates that the backslash character ("\") escapes the character that follow it, so to get a literal windows path you must have:
+C:\\Users\\Maurice\\Desktop\\Logs
+
+However, Java will convert path separator characters for you automatically to suit the runtime platform, so you can avoid this nuisance by always using forward slashes:
+C:/Users/Maurice/Desktop/Logs
