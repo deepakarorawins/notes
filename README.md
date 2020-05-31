@@ -122,3 +122,16 @@ C:\\Users\\Maurice\\Desktop\\Logs
 
 However, Java will convert path separator characters for you automatically to suit the runtime platform, so you can avoid this nuisance by always using forward slashes:
 C:/Users/Maurice/Desktop/Logs
+
+
+### If checked in blank folder (src/main/java or src/test/resources) in git those empty folder will be removed from project as git ignore empty folder 
+
+https://www.topjavatutorial.com/struts/missing-srcmainjava-maven-project-eclipse/
+
+When you create a Web application using Maven and import it in Eclipse, you may not see src/main/java folder in the Project or Package Explorer.
+You can fix it using the following steps :
+Step 1: Right click on the Maven Project, select Build Path and then Configure Build Path
+Step 2: In Order and Export tab, you can see the message like ‘2 build path entries are missing’
+Step 3: Select ‘JRE System Library’ and ‘Maven Dependencies’ checkbox and click OK.
+Now you should see src/main/java and src/test/java folders in Package Explorer or Project Explorer.
+
