@@ -145,3 +145,13 @@ Running sudo killall -CONT usbd will resume the process, should anything require
 
 Tested on: iPhone 7 (iOS 11) + MacBook Pro Late 2013 (10.13.6)
 
+
+### Maven 3 warnings about build.plugins.plugin.version
+Add a <version> element after the <plugin> <artifactId> in your pom.xml file. Find the following text:
+``` 
+<plugin>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>2.3.2</version> ```
+
+java.lang.NoClassDefFoundError: org/openqa/selenium/remote/internal/JsonToWebElementConverter
+
