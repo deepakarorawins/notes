@@ -147,6 +147,8 @@ Tested on: iPhone 7 (iOS 11) + MacBook Pro Late 2013 (10.13.6)
 
 
 ### Maven 3 warnings about build.plugins.plugin.version
+https://stackoverflow.com/questions/4123044/maven-3-warnings-about-build-plugins-plugin-version
+
 Add a <version> element after the <plugin> <artifactId> in your pom.xml file. Find the following text:
 ``` 
 <plugin>
