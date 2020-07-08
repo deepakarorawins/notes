@@ -153,8 +153,24 @@ Add a ``` <version> ``` element after the <plugin> <artifactId> in your pom.xml 
 ``` 
 <plugin>
   <artifactId>maven-compiler-plugin</artifactId>
-  <version>2.3.2</version> ```
+  <version>2.3.2</version> 
+```
 
 
-java.lang.NoClassDefFoundError: org/openqa/selenium/remote/internal/JsonToWebElementConverter
+### java.lang.NoClassDefFoundError: org/openqa/selenium/remote/internal/JsonToWebElementConverter
+This was due to different version of cucumber
+
+
+### get iPhone udid
+
+https://stackoverflow.com/questions/17237354/how-can-i-find-the-device-uuids-of-all-connected-devices-through-a-command-line
+
+install ideviceinstaller on Mac OS X via brew command: brew install ideviceinstaller
+then ``` idevice_id -l ``` will work from terminal
+or
+If you have Xcode installed, you can use Instruments to get all known devices also. With
+``` instruments -s devices ```
+
+https://www.wikihow.com/Obtain-the-Identifier-Number-(UDID)-for-an-iPhone,-iPod-or-iPad
+
 
