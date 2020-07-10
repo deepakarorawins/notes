@@ -173,4 +173,8 @@ If you have Xcode installed, you can use Instruments to get all known devices al
 
 https://www.wikihow.com/Obtain-the-Identifier-Number-(UDID)-for-an-iPhone,-iPod-or-iPad
 
+### Get bundleid of installed app on iOS using itunes
+https://youtu.be/Iq6Dt0rz7Uw?t=883
+
+
 
