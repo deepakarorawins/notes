@@ -176,5 +176,8 @@ https://www.wikihow.com/Obtain-the-Identifier-Number-(UDID)-for-an-iPhone,-iPod-
 ### Get bundleid of installed app on iOS using itunes
 https://youtu.be/Iq6Dt0rz7Uw?t=883
 
+### Kill avd device
+adb -s emulator-5554 emu kill
+
 
 
