@@ -182,4 +182,13 @@ https://youtu.be/Iq6Dt0rz7Uw?t=883
 adb -s emulator-5554 emu kill
 
 
+### Undo Last Git Commit with reset
+https://devconnected.com/how-to-undo-last-git-commit/#:~:text=Conclusion-,Undo%20Last%20Git%20Commit%20with%20reset,removed%20from%20your%20Git%20history.
+
+The easiest way to undo the last Git commit is to execute the “git reset” command with the “–soft” option that will preserve changes done to your files. You have to specify the commit to undo which is “HEAD~1” in this case.
+
+The last commit will be removed from your Git history.
+
+$ git reset --soft HEAD~1
+
 
