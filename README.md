@@ -192,3 +192,8 @@ The last commit will be removed from your Git history.
 $ git reset --soft HEAD~1
 
 
+
+
+### iOS: Changing Device Language or Region
+https://developers.perfectomobile.com/display/TT/iOS%3A+Changing+Device+Language+or+Region
+https://developers.perfectomobile.com/display/TT/Test+your+app+for+specific+language+and+region+settings
