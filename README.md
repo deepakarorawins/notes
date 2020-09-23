@@ -199,5 +199,12 @@ https://developers.perfectomobile.com/display/TT/iOS%3A+Changing+Device+Language
 https://developers.perfectomobile.com/display/TT/Test+your+app+for+specific+language+and+region+settings
 
 
-### update Carthage
+### Update Carthage
 brew upgrade carthage
+
+### Uninstall Node
+sudo rm -rf /usr/local/lib/node_modules
+sudo rm -rf ~/.npm
+brew uninstall node
+brew install node --without-npm
+
