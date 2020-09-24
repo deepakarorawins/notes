@@ -204,7 +204,10 @@ brew upgrade carthage
 
 ### Uninstall Node
 sudo rm -rf /usr/local/lib/node_modules
+
 sudo rm -rf ~/.npm
+
 brew uninstall node
+
 brew install node --without-npm
 
