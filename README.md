@@ -118,6 +118,10 @@ Xpath=//*[@id='rt-feature']//parent::div
 ### What is the difference between .// and //* in XPath?
 https://stackoverflow.com/questions/35606708/what-is-the-difference-between-and-in-xpath
 
+### Exclude specific element from List of elements
+xpath = "//a[.!='Click Here for Broken Link']"
+
+
 ### Path separator in properties file
 The Java properties file format dictates that the backslash character ("\") escapes the character that follow it, so to get a literal windows path you must have:
 C:\\Users\\Maurice\\Desktop\\Logs
