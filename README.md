@@ -215,6 +215,9 @@ brew uninstall node
 
 brew install node --without-npm
 
+### Update Node
+npm install -g update-node
+
 ### Xcode
 Remove unused simulator to gain storage space back
 Execute this on terminal: - xcrun simctl delete unavailable
