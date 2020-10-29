@@ -203,6 +203,33 @@ https://developers.perfectomobile.com/display/TT/iOS%3A+Changing+Device+Language
 https://developers.perfectomobile.com/display/TT/Test+your+app+for+specific+language+and+region+settings
 
 
+### iOS Appium Setup
+Install Xcode or Upgrade
+xcode-select --install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew --version
+brew install carthage
+
+Optional need to check below
+Install JAVA
+java -version
+If the version is less than 1.8 or the command is not recognized you need to install java.
+If the version is 1.8 or greater then go to Ruby install.
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+Optional need to check above
+
+brew install node
+npm --version
+node -v
+npm install -g update-node
+npm install -g appium-doctor
+appium-doctor --ios
+npm install -g appium
+appium -v
+
+
+
+
 ### Update Carthage
 brew upgrade carthage
 
