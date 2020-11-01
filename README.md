@@ -249,3 +249,21 @@ npm install -g update-node
 Remove unused simulator to gain storage space back
 Execute this on terminal: - xcrun simctl delete unavailable
 
+
+
+### Jenkins
+Sample commands:
+Install the latest LTS version: brew install jenkins-lts
+
+Install a specific LTS version: brew install jenkins-lts@YOUR_VERSION
+
+Start the Jenkins service: brew services start jenkins-lts
+
+Restart the Jenkins service: brew services restart jenkins-lts
+
+Update the Jenkins version: brew upgrade jenkins-lts
+
+
+Server starts at http://localhost:8080  
+But you can change the port by editing the file at /usr/local/Cellar/jenkins/2.167/homebrew.mxcl.jenkins.plist
+
