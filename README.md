@@ -267,3 +267,9 @@ Update the Jenkins version: brew upgrade jenkins-lts
 Server starts at http://localhost:8080  
 But you can change the port by editing the file at /usr/local/Cellar/jenkins/2.167/homebrew.mxcl.jenkins.plist
 
+### How to open apps from unidentified developers on Mac in macOS Catalina
+https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
+
+sudo spctl --master-disable (To Allow)
+sudo spctl --master-enable (Default)
+
