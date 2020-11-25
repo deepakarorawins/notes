@@ -274,6 +274,8 @@ sudo spctl --master-disable (To Allow)
 sudo spctl --master-enable (Default)
 
 ### VS Code Shortcuts
+https://medium.com/better-programming/20-vs-code-shortcuts-for-fast-coding-cheatsheet-10b0e72fd5d
+
 The code formatting is available in Visual Studio Code through the following shortcuts:
 
 On Windows Shift + Alt + F.
