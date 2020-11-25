@@ -273,3 +273,12 @@ https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
 sudo spctl --master-disable (To Allow)
 sudo spctl --master-enable (Default)
 
+### VS Code Shortcuts
+The code formatting is available in Visual Studio Code through the following shortcuts:
+
+On Windows Shift + Alt + F.
+
+On Mac Shift + Option + F.
+
+On Linux Ctrl + Shift + I.
+
