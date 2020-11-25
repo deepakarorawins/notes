@@ -284,3 +284,6 @@ On Mac Shift + Option + F.
 
 On Linux Ctrl + Shift + I.
 
+Multiline Commment 
+On Mac Cmd + /
+
