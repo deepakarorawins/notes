@@ -61,6 +61,35 @@ Solution: - Jenkins --> Credentials --> System --> Global Credentials (little do
 .
 
 
+## When Jenkins installed via
+2020-12-03 17:03:03,893 INFO  AppiumManager                      :(97  ) - Killed Existing Node Instances
+2020-12-03 17:03:03,894 INFO  CommandPrompt                      :(28  ) - Mac OS X
+2020-12-03 17:03:03,894 INFO  CommandPrompt                      :(39  ) - Identified Mac - Running Command on Mac 
+2020-12-03 17:03:03,894 INFO  CommandPrompt                      :(40  ) - Command = appium --session-override
+**java.io.IOException: Cannot run program "appium": error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)**
+	
+Solution: - 
+Start jenkins using below command as given in the link
+
+```jenkins-lts```
+
+To have launchd start jenkins-lts now and restart at login:
+
+  brew services start jenkins-lts
+  
+Or, if you don't want/need a background service you can just run: - jenkins-lts
+
+https://www.macminivault.com/installing-jenkins-on-macos/
+
+
+
+
+
+
+
+
+
 ## Maven
 Issue: - [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 Solution: - This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to use a specific file encoding. So eliminating the warning is simply a matter of finding out which plugin emits it and how to configure the file encoding for it. This is as easy as adding the following property to your POM (or one of its parent POMs):
