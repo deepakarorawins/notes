@@ -83,8 +83,8 @@ Or, if you don't want/need a background service you can just run: - jenkins-lts
 https://www.macminivault.com/installing-jenkins-on-macos/
 
 
-
-
+### Jenkins Environment Varialbles
+http://localhost:8080/env-vars.html/
 
 
 
