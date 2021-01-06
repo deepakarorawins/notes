@@ -181,6 +181,27 @@ Running sudo killall -CONT usbd will resume the process, should anything require
 Tested on: iPhone 7 (iOS 11) + MacBook Pro Late 2013 (10.13.6)
 
 
+
+
+### Restart iPhone via terminal connected to computer
+idevicediagnostics is a Linux tool which can help here. It is also available for macOS according to http://krypted.com/mac-os-x/use-libimobiledevice-to-view-ios-logs/
+
+Once installed you can use
+
+idevicediagnostics restart
+
+to restart your device.
+
+To Restart the iOS devices connected more than one devices by
+
+idevicediagnostics -u udidnumber restart
+
+
+
+
+
+
+
 ### Maven 3 warnings about build.plugins.plugin.version
 https://stackoverflow.com/questions/4123044/maven-3-warnings-about-build-plugins-plugin-version
 
