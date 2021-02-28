@@ -323,10 +323,11 @@ But you can change the port by editing the file at /usr/local/Cellar/jenkins/2.1
 java.io.IOException: Cannot run program "appium": error=2, No such file or directory
 
 
-Solutoin: - 
+*Solutoin: -* 
 Jenkins -> Manage Jenkins -> Configure System -> Global properties -> Environment variables I added:
 
 Name: Path
+
 Value: /bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 
