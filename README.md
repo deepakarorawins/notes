@@ -317,6 +317,19 @@ Update the Jenkins version: brew upgrade jenkins-lts
 Server starts at http://localhost:8080  
 But you can change the port by editing the file at /usr/local/Cellar/jenkins/2.167/homebrew.mxcl.jenkins.plist
 
+
+### When jenkins started by service we get following error: -
+2021-02-28 18:40:48,183 INFO  CommandPrompt                      :(40  ) - Command = appium --session-override
+java.io.IOException: Cannot run program "appium": error=2, No such file or directory
+
+
+Solutoin: - 
+Jenkins -> Manage Jenkins -> Configure System -> Global properties -> Environment variables I added:
+
+Name: Path
+Value: /bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+
 ### How to open apps from unidentified developers on Mac in macOS Catalina
 https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
 
