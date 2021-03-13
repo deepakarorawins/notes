@@ -260,37 +260,39 @@ https://developers.perfectomobile.com/display/TT/Test+your+app+for+specific+lang
 
 https://gist.github.com/irazasyed/7732946
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
 or
 
-sudo chown -R $(whoami) $(brew --prefix)/*
+`sudo chown -R $(whoami) $(brew --prefix)/*`
 
 
 
 
 
 **Install Xcode or Upgrade**
+
+```
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew --version
 
 brew install carthage
-
+```
 Optional need to check below
 Install JAVA
 
-java -version
+`java -version`
 
 If the version is less than 1.8 or the command is not recognized you need to install java.
 
 If the version is 1.8 or greater then go to Ruby install.
 
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
+`\curl -sSL https://get.rvm.io | bash -s stable --ruby`
 
 Optional need to check above
-
+```
 brew install node
 
 npm --version
@@ -306,24 +308,24 @@ appium-doctor --ios
 npm install -g appium
 
 appium -v
-
+```
 
 
 
 ### Update Carthage
-brew upgrade carthage
+`brew upgrade carthage`
 
 ### Uninstall Node
-sudo rm -rf /usr/local/lib/node_modules
+`sudo rm -rf /usr/local/lib/node_modules`
 
-sudo rm -rf ~/.npm
+`sudo rm -rf ~/.npm`
 
-brew uninstall node
+`brew uninstall node`
 
-brew install node --without-npm
+`brew install node --without-npm`
 
 ### Update Node
-npm install -g update-node
+`npm install -g update-node`
 
 ### Xcode
 Remove unused simulator to gain storage space back
@@ -364,8 +366,8 @@ Value: /bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 ### How to open apps from unidentified developers on Mac in macOS Catalina
 https://www.imore.com/how-open-apps-anywhere-macos-catalina-and-mojave
 
-sudo spctl --master-disable (To Allow)
-sudo spctl --master-enable (Default)
+`sudo spctl --master-disable` (To Allow)
+`sudo spctl --master-enable` (Default)
 
 ### VS Code Shortcuts
 https://medium.com/better-programming/20-vs-code-shortcuts-for-fast-coding-cheatsheet-10b0e72fd5d
@@ -384,25 +386,23 @@ On Mac Cmd + /
 
 ### Finding other computers on network over command line
 
-arp -a
-
-to see your computer's current arp table. It will show only those IP addresses your computer has interacted with. Output like this (obscured a little to hide MAC addresses on my network)
+Use `arp -a` to see your computer's current arp table. It will show only those IP addresses your computer has interacted with. Output like this (obscured a little to hide MAC addresses on my network)
 
 
 ### Remote login via ssh
 
-ssh username@ip-address
+`ssh username@ip-address`
 
 
 
 ### Enabling Remote Login from the Command Line
 If you’re setting up your Mac with scripts, you can enable Remote Login from the command line. On a terminal window, type:
 
-sudo systemsetup -setremotelogin on
+`sudo systemsetup -setremotelogin on`
 
 If you want to disable it, you can do so with:
 
-sudo systemsetup -setremotelogin off
+`sudo systemsetup -setremotelogin off`
 
 
 
@@ -410,11 +410,11 @@ sudo systemsetup -setremotelogin off
 
 ### Restart mac via ssh
 
-sudo /sbin/shutdown -r now
+`sudo /sbin/shutdown -r now`
 
 or
 
-ssh username@ip-address sudo /sbin/shutdown -r now
+`ssh username@ip-address sudo /sbin/shutdown -r now`
 
 
 
