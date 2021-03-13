@@ -173,10 +173,10 @@ Now you should see src/main/java and src/test/java folders in Package Explorer o
 ### iphone charging sign keeps alternating
 https://apple.stackexchange.com/questions/191239/my-iphone-keeps-switching-on-and-off-charge-whilst-charging-how-do-i-fix-it
 Running this in terminal worked for me: (it will ask for your user's password)
-sudo killall -STOP -c usbd
+`sudo killall -STOP -c usbd`
 This pauses the troublesome process instead of killing it altogether like other answers suggest. The difference is that macOS won't try to reopen it automatically and cause the issue again.
 
-Running sudo killall -CONT usbd will resume the process, should anything require it.
+Running `sudo killall -CONT usbd` will resume the process, should anything require it.
 
 Tested on: iPhone 7 (iOS 11) + MacBook Pro Late 2013 (10.13.6)
 
