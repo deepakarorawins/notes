@@ -381,3 +381,40 @@ On Linux Ctrl + Shift + I.
 Multiline Commment 
 On Mac Cmd + /
 
+
+### Finding other computers on network over command line
+
+arp -a
+
+to see your computer's current arp table. It will show only those IP addresses your computer has interacted with. Output like this (obscured a little to hide MAC addresses on my network)
+
+
+### Remote login via ssh
+
+ssh username@ip-address
+
+
+
+### Enabling Remote Login from the Command Line
+If you’re setting up your Mac with scripts, you can enable Remote Login from the command line. On a terminal window, type:
+
+sudo systemsetup -setremotelogin on
+
+If you want to disable it, you can do so with:
+
+sudo systemsetup -setremotelogin off
+
+
+
+
+
+### Restart mac via ssh
+
+sudo /sbin/shutdown -r now
+
+or
+
+ssh username@ip-address sudo /sbin/shutdown -r now
+
+
+
