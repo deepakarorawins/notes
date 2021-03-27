@@ -253,6 +253,12 @@ https://developers.perfectomobile.com/display/TT/iOS%3A+Changing+Device+Language
 https://developers.perfectomobile.com/display/TT/Test+your+app+for+specific+language+and+region+settings
 
 
+
+### iOS: Uninstall app
+
+ios-deploy --uninstall_only --bundle_id <bundle id>
+
+
 ### iOS Appium Setup
 
 
