@@ -432,3 +432,8 @@ or
 
 
 
+	
+	
+	
+### Set up an SSH key	Bitbucket
+https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/	
