@@ -437,3 +437,21 @@ or
 	
 ### Set up an SSH key	Bitbucket
 https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/	
+	
+
+This command will create a new SSH key using the email as a label: - 	
+ssh-keygen -t rsa -b 4096 -C ritika.wadhwa@milwaukeetool.com 	
+
+To start the agent, run the following: -
+eval `ssh-agent`
+
+Enter ssh-add followed by the path to the private key file: -
+ssh-add -K ~/.ssh/id_rsa
+	
+On macOS, the following command copies the output to the clipboard: - 
+pbcopy < ~/.ssh/id_rsa.pub
+			  
+Add this copied public key to bitbucket profile
+		
+Return to the terminal window and verify your configuration and username by entering the following command: - 			  
+ssh -T git@bitbucket.org
