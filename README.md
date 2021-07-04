@@ -460,3 +460,41 @@ Add this copied public key to bitbucket profile
 Return to the terminal window and verify your configuration and username by entering the following command: - 			  
 
 				  ssh -T git@bitbucket.org
+				  
+				  
+				  
+### My .bash_profile
+
+echo Hello from .bash_profile 
+# export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Setting default JDK to version 1.8.
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_181`
+
+# Setting default JDK to version 1.8.
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# Setting default JDK to version 13.0.2.
+#export JAVA_HOME=`/usr/libexec/java_home -v 13.0.2`
+
+# Setting default JDK to version 14.0.1.
+#export JAVA_HOME=`/usr/libexec/java_home -v 14.0.1`
+
+export PATH=$JAVA_HOME/bin:$PATH
+export M2_HOME=/Users/deepakarora/soft/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
+
+# Setting ANDROID HOME
+export ANDROID_HOME="/Users/deepakarora/Library/Android/sdk"
+export PATH=${PATH}:/$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+
+
+
+
+
+# Setting alisas
+alias c="clear"
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_181`; java -version"
+alias j13="export JAVA_HOME=`/usr/libexec/java_home -v 13.0.2`; java -version"
+alias j14="export JAVA_HOME=`/usr/libexec/java_home -v 14.0.1`; java -version"
+alias graph='git log --all --decorate --oneline --graph'
