@@ -498,3 +498,9 @@ alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_181`; java -version"
 alias j13="export JAVA_HOME=`/usr/libexec/java_home -v 13.0.2`; java -version"
 alias j14="export JAVA_HOME=`/usr/libexec/java_home -v 14.0.1`; java -version"
 alias graph='git log --all --decorate --oneline --graph'
+
+				  
+				  
+### Undo git add . (Moving files back to Working area from Staging area)
+
+				  git rm --cached -r
