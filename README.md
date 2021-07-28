@@ -518,3 +518,5 @@ Dialogs do not appear.
 Solution: - Open Appium studio and from the menu click on Open Logs Folder.
 	
 Open Error.log file and search for "Duplicate key" now try to delete these key/s from the following location - /Users/radmila.petrovic/Library/MobileDevice/Provisioning Profiles/6db32701-45b0-4066-8e2f-5f3005a5e65c.mobileprovision and see if that fixes the issue
+	
+https://appium.experitest.com/t/cant-access-ios-provisioning-profile-selection-management-from-the-menu/2150
