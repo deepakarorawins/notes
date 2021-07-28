@@ -504,3 +504,17 @@ alias graph='git log --all --decorate --oneline --graph'
 ### Undo git add . (Moving files back to Working area from Staging area)
 
 				  git rm --cached -r
+				  
+				  
+				  
+### Appium Studio stuck at Non-instrumental mode, and 
+
+Open Appium studio and from the menu click on Tools-> iOS Provisioning Profile Selection or
+	
+Open Appium studio and from the menu click on Tools->iOS Provisioning Profile Management
+
+Dialogs do not appear.
+	
+Solution: - Open Appium studio and from the menu click on Open Logs Folder.
+	
+Open Error.log file and search for "Duplicate key" now try to delete these key/s from the following location - /Users/radmila.petrovic/Library/MobileDevice/Provisioning Profiles/6db32701-45b0-4066-8e2f-5f3005a5e65c.mobileprovision and see if that fixes the issue
