@@ -5,8 +5,49 @@ Useful commands and notes
 pkill -f <name of program>
 e.g. "pkill -f chromedriver-mac-64bit"
 or "pkill -f Google Chrome Helper"
+	
+	
+	
+# The port is occupied by another process - mac
+Quick and easier solution:
 
-### Start Genymotion Emulator via terminal
+For killing single port:
+```kill -9 $(lsof -ti:3000)```
+#3000 is the port to be freed
+
+For killing multiple ports:
+```kill -9 $(lsof -ti:3000,3001)```
+#3000 and #3001 are the port to be freed
+
+
+Kill multiple ports with single line command:
+```kill -9 $(lsof -ti:3000,3001)```
+#here multiple ports 3000 and 3001 are the ports to be freed
+
+```lsof -ti:3000```
+82500 (Process ID)
+
+```lsof -ti:3001```
+82499 (Process ID)
+
+```lsof -ti:3001,3000```
+82499 82500
+
+```kill -9 $(lsof -ti:3001,3000)```
+Terminates both 82499 and 82500 processes in a single command.
+
+For using this in package.json scripts:
+
+```
+"scripts": {
+   "start": "kill -9 $(lsof -ti:3000,3001) && npm start"
+}
+```	
+	
+	
+
+
+# Start Genymotion Emulator via terminal
 
 <b>To get all emulator's name and id: -</b> "VBoxManage list vms"
 
