@@ -387,6 +387,29 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error
 
 
+#xcode-select active developer directory error
+	
+This problem happens when xcode-select developer directory was pointing to /Library/Developer/CommandLineTools when a full regular Xcode was required (happens when CommandLineTools are installed after Xcode)
+
+Solution:
+
+1. Install Xcode (get it from https://appstore.com/mac/apple/xcode) if you don't have it yet.
+	
+2. Accept the Terms and Conditions.
+	
+3. Ensure Xcode app is in the /Applications directory (NOT /Users/{user}/Applications).
+	
+4. Point xcode-select to the Xcode app Developer directory using the following command:
+	
+```sudo xcode-select -s /Applications/Xcode.app/Contents/Developer```
+	
+Note: Make sure your Xcode app path is correct.
+
+Xcode: ```/Applications/Xcode.app/Contents/Developer```
+	
+Xcode-beta: ```/Applications/Xcode-beta.app/Contents/Developer```
+	
+	
 
 ### Jenkins
 Sample commands:
