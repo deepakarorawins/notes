@@ -237,7 +237,20 @@ To Restart the iOS devices connected more than one devices by
 
 idevicediagnostics -u udidnumber restart
 
+	
+# fatal: unable to access 'https://git.libimobiledevice.org/libimobiledevice.git/': SSL certificate problem: certificate has expired
 
+One more option. You can run this command to disable the requiring of SSL for repositories.
+```git config --global http.sslVerify false```
+
+Installing a repository without HTTPS can be not secure.
+I did it on my dev machine, so it works for me. Then run:
+	
+```brew install libimobiledevice --HEAD``` // or another repo which has expired SSL cert
+
+and enable SSL requiring after
+	
+```git config --global http.sslVerify true```
 
 
 
