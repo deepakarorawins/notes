@@ -639,3 +639,22 @@ Solution: - Add following into Jenkins -> Node Properties -> Environment Variabl
 ```
 ![image](https://user-images.githubusercontent.com/30565176/133909015-d343d970-7aed-4d97-a431-4dcadbd75511.png)
 
+
+	
+# To check Jenkins node environment: - 
+Dashboard → New Item → Enter any name → Select Pipeline → OK
+Navigate to Pipeline → Definition=Pipeline script → Use Groovy Sandbox
+use below script: - 
+```
+echo 'hello from Pipeline'
+node ("brkiosbuild15") {
+	sh "which java"
+    	sh "java -version"
+    	sh "which node"
+    	sh "node -v"
+    	sh "which appium"
+    	sh "appium -v"
+	def mvnHome = tool 'M3'
+  	sh "${mvnHome}/bin/mvn -v"
+}
+```
