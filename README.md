@@ -597,3 +597,45 @@ Solution: - Open Appium studio and from the menu click on Open Logs Folder.
 Open Error.log file and search for "Duplicate key" now try to delete these key/s from the following location - /Users/radmila.petrovic/Library/MobileDevice/Provisioning Profiles/6db32701-45b0-4066-8e2f-5f3005a5e65c.mobileprovision and see if that fixes the issue
 	
 https://appium.experitest.com/t/cant-access-ios-provisioning-profile-selection-management-from-the-menu/2150
+
+	
+	
+# Mac with M1 chip
+## Jenkins - Issue
+Issue 1: - 
+```
++ /Users/Jenkinslab/Build/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -Dmaven.test.failure.ignore clean test -Dtest=Runner -Dcustomdata=n -Dplatform=ios-devices -Dtoolcat=Build_Sanity -Denvironment=test -Dinstall=y -Dgroup=functional -Dbrowser=headless -Dcredentials=nasanitytest@mailinator.com -Dretry=0 -DfailIfNoTests=false -Dcom.sun.security.enableAIAcaIssuers=true
+The JAVA_HOME environment variable is not defined correctly
+This environment variable is needed to run this program
+NB: JAVA_HOME should point to a JDK not a JRE
+```
+![image](https://user-images.githubusercontent.com/30565176/133909183-e4c40274-b29f-4ac8-a324-c564d47681cc.png)
+
+	
+Solution: - Add following into Jenkins -> Node Properties -> Environment Variables (respective values): - 
+```	
+	Name=JAVA_HOME
+	Value=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
+```
+![image](https://user-images.githubusercontent.com/30565176/133909004-df18dbfa-d4d9-40b4-ad55-079602057311.png)
+
+	
+	
+	
+	
+Issue 2: - 
+```
+2021-09-18 07:13:03,575 INFO  CommandPrompt                      :(40  ) - Command = appium --session-override
+java.io.IOException: Cannot run program "appium": error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+```
+![image](https://user-images.githubusercontent.com/30565176/133909253-7dbc97af-dd7c-4744-b301-b717ddb698ff.png)
+
+	
+Solution: - Add following into Jenkins -> Node Properties -> Environment Variables (with other values): - 
+```
+	Name=PATH
+	Value=/opt/homebrew/bin
+```
+![image](https://user-images.githubusercontent.com/30565176/133909015-d343d970-7aed-4d97-a431-4dcadbd75511.png)
+
