@@ -658,3 +658,27 @@ node ("brkiosbuild15") {
   	sh "${mvnHome}/bin/mvn -v"
 }
 ```
+	
+	
+# "'instruments'" requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+	and if we change the path then it asks to install the "xcode command line tool" and after installation it kees asking to install the same.
+	
+Sol.: - Deprecations The deprecated instruments command-line tool has been removed; instead, use xctrace.
+	Instruments will be deprecated in Xcode 12 as below. Previously, instruments command was used.
+	
+	https://developer.apple.com/forums/thread/690889
+	https://kazucocoa.wordpress.com/2020/08/15/ios-instruments-template-and-xctrace-templates/
+	
+use ```xcrun xctrace list devices | grep -i OKAUTO | grep -v Simulator``` 
+
+instead of 
+
+```instruments -s devices | grep -i OKAUTO | grep -v Simulator```
+	
+	
+use ```xcrun xctrace list devices | grep "iPhone 8 (" | grep -i Simulator | sort -r | grep -v + | awk -F "(" '{print $2}' | awk -F ")" '{print $1}'```
+
+instead of
+
+```instruments -s devices | grep "iPhone 8 (" | grep -i Simulator | sort -r | grep -v + | awk -F "(" '{print $2}' | awk -F ")" '{print $1}'```
+	
