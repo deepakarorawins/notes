@@ -659,6 +659,15 @@ node ("brkiosbuild15") {
 }
 ```
 	
+### Above solution was not working I spent almost 3 days to get it fixed.
+	
+Solution: - In my master jenkins server in "Manage Jenkins --> System Configuration --> Configuration --> Global Properties --> Environment variables" was checked and Java_HOME was given there which was causing issue on slave nodes.![image](https://user-images.githubusercontent.com/30565176/142961118-7161eae0-12da-4cba-8021-a24b987aa703.png)
+
+	
+	
+	
+	
+	
 	
 # "'instruments'" requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
 	and if we change the path then it asks to install the "xcode command line tool" and after installation it kees asking to install the same.
