@@ -661,9 +661,10 @@ node ("brkiosbuild15") {
 	
 ### Above solution was not working I spent almost 3 days to get it fixed.
 	
-Solution: - In my master jenkins server in "Manage Jenkins --> System Configuration --> Configuration --> Global Properties --> Environment variables" was checked and Java_HOME was given there which was causing issue on slave nodes. I unchecked that Environment variable checkbox which deleted the entries of JAVA_HOME and PATH also now above solution is working fine on slave nodes ![image](https://user-images.githubusercontent.com/30565176/142961118-7161eae0-12da-4cba-8021-a24b987aa703.png)
+Solution: - In my master jenkins server in "Manage Jenkins --> System Configuration --> Configuration --> Global Properties --> Environment variables" was checked and Java_HOME was given there which was causing issue on slave nodes. I unchecked that Environment variable checkbox which deleted the entries of JAVA_HOME and PATH also. 
+# Now above solution is working fine on slave nodes ![image](https://user-images.githubusercontent.com/30565176/142961118-7161eae0-12da-4cba-8021-a24b987aa703.png)
 	
-And to give JAVA_HOME for master node use this. ![image](https://user-images.githubusercontent.com/30565176/142962254-9e0e91cb-1485-474a-a556-13b44ef80670.png)
+# And to give JAVA_HOME for master node use this. ![image](https://user-images.githubusercontent.com/30565176/142962254-9e0e91cb-1485-474a-a556-13b44ef80670.png)
 
 
 	
