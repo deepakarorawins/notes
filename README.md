@@ -695,3 +695,18 @@ instead of
 
 ```instruments -s devices | grep "iPhone 8 (" | grep -i Simulator | sort -r | grep -v + | awk -F "(" '{print $2}' | awk -F ")" '{print $1}'```
 	
+
+	
+	
+### iPhone-Appium desired capability
+```
+{
+  "platformName": "iOS",
+  "appium:deviceName": "iPhone 6s OKAUTO",
+  "appium:platformVersion": "15.1",
+  "appium:bundleId": "com.milwaukeetool.mymilwaukee",
+  "appium:udid": "00008101-001959382678001E",
+  "appium:useNewWDA": "true",
+  "appium:unlockType": "null"
+}
+```
