@@ -695,7 +695,10 @@ instead of
 
 ```instruments -s devices | grep "iPhone 8 (" | grep -i Simulator | sort -r | grep -v + | awk -F "(" '{print $2}' | awk -F ")" '{print $1}'```
 	
+### Error running xcrun simctl
 
+Sol.: - Xcode > Preferences > Locations
+	Click on dropdown, and selecte the given location/xcode
 	
 	
 ### iPhone-Appium desired capability
