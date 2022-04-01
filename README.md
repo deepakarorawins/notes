@@ -713,3 +713,9 @@ Sol.: - Xcode > Preferences > Locations
   "appium:unlockType": "null"
 }
 ```
+	
+### Java Naming Convention
+	Class or Interface name: - MyClass (start with capital letter)
+	final constant values: - MYVALUE or MY_VALUE
+	methodName: - myMethod (camel case)
+	packagename: - packagename (all small letters)
