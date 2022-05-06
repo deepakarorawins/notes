@@ -6,6 +6,9 @@ pkill -f <name of program>
 e.g. "pkill -f chromedriver-mac-64bit"
 or "pkill -f Google Chrome Helper"
 	
+<b> Stop teamviewer service at Mac machine </b>
+	sudo launchctl stop com.teamviewer.service
+	
 	
 	
 # The port is occupied by another process - mac
