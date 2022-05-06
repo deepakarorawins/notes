@@ -719,3 +719,22 @@ Sol.: - Xcode > Preferences > Locations
 	final constant values: - MYVALUE or MY_VALUE
 	methodName: - myMethod (camel case)
 	packagename: - packagename (all small letters)
+	
+	
+	
+### Appium failures on video recording start (iPhone X, 11 ffmpeg issue)
+https://github.com/appium/appium/issues/12856
+https://github.com/appium/appium-dotnet-driver/issues/404
+
+https://discuss.appium.io/t/ios-ffmpeg-died-unexpectedly/35668/4
+
+https://github.com/3b1b/manim/issues/55
+
+.withVideoScale("1280:720");
+
+
+
+https://discuss.appium.io/t/i-can-not-take-screen-shoot-or-record-video-by-appium-1-22-and-real-device-ios-15/35100/7
+
+https://www.reddit.com/r/linux4noobs/comments/671z6b/width_not_divisible_by_2_error_when_using_ffmpeg/
+
