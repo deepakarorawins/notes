@@ -741,3 +741,6 @@ https://discuss.appium.io/t/i-can-not-take-screen-shoot-or-record-video-by-appiu
 
 https://www.reddit.com/r/linux4noobs/comments/671z6b/width_not_divisible_by_2_error_when_using_ffmpeg/
 
+	
+### InteliJ shorcuts: 
+	Load Maven changes -> Shift+Command+I (Ctrl+Shift+0 win/linux)
