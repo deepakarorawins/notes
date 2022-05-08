@@ -744,3 +744,8 @@ https://www.reddit.com/r/linux4noobs/comments/671z6b/width_not_divisible_by_2_er
 	
 ### InteliJ shorcuts: 
 	Load Maven changes -> Shift+Command+I (Ctrl+Shift+0 win/linux)
+	
+	Multiline edit -> 
+	drage while holding Option button
+	
+	Ctrl+G for selection
