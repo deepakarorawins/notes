@@ -755,7 +755,22 @@ https://github.com/3b1b/manim/issues/55
 https://discuss.appium.io/t/i-can-not-take-screen-shoot-or-record-video-by-appium-1-22-and-real-device-ios-15/35100/7
 
 https://www.reddit.com/r/linux4noobs/comments/671z6b/width_not_divisible_by_2_error_when_using_ffmpeg/
-
+	
+	
+### In Appium Server logs: - [ffmpeg] [libx264 @ 0x7f9ed3804600] width not divisible by 2 (1125x2436)	
+Solution is to use .withVideoScale("trunc(iw/2)*2:trunc(ih/2)*2"); as given in https://github.com/appium/appium-dotnet-driver/issues/404 by KazuCocoa, also see https://ffmpeg.org/ffmpeg-filters.html: - 
+```
+	@BeforeMethod
+	public void beforeMethod() {
+		IOSStartScreenRecordingOptions o1 = new IOSStartScreenRecordingOptions()
+				.withVideoQuality(VideoQuality.MEDIUM)
+				.withVideoType("h264")
+				.withVideoScale("trunc(iw/2)*2:trunc(ih/2)*2"); // To fix width not divisible by 2 error for Some iPhones like iPhone12 mini, iPhone13 mini and iPhoneX
+		
+		((CanRecordScreen) getDriver()).startRecordingScreen(o1);
+		setRecording(true);
+	}
+```
 	
 ### InteliJ shorcuts: 
 	Load Maven changes -> Shift+Command+I (Ctrl+Shift+0 win/linux)
