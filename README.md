@@ -779,3 +779,10 @@ Solution is to use .withVideoScale("trunc(iw/2)*2:trunc(ih/2)*2"); as given in h
 	drage while holding Option button
 	
 	Ctrl+G for selection
+	
+	
+	
+	
+### Various actions on web or mobile
+scrollToBottomDirect
+scrollToBottomInParts
