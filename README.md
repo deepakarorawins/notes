@@ -786,3 +786,52 @@ Solution is to use .withVideoScale("trunc(iw/2)*2:trunc(ih/2)*2"); as given in h
 ### Various actions on web or mobile
 scrollToBottomDirect
 scrollToBottomInParts
+
+
+### Docker
+docker run --rm --name jenkins -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+
+docker volume inspect jenkins_home
+
+docker exec -it jenkins /bin/bash
+
+docker cp /Users/deepakarora/FULL-2022-11-20_10-23 jenkins:/var/jenkins_home/backup
+
+
+
+
+Finding the Jenkins Data in the Container
+docker exec -ti <container name>
+To Exit from above: To detach the tty without exiting the shell, use the escape sequence CTRL+P followed by CTRL+Q. https://serverfault.com/questions/1025688/how-to-exit-docker-exec-after-container-has-exited
+
+https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
+https://www.youtube.com/watch?v=6KEERS6nZjM
+
+
+
+
+https://stackoverflow.com/questions/22907231/how-to-copy-files-from-host-to-docker-container
+The cp command can be used to copy files.
+
+One specific file can be copied TO the container like:
+
+docker cp foo.txt container_id:/foo.txt
+One specific file can be copied FROM the container like:
+
+docker cp container_id:/foo.txt foo.txt
+For emphasis, container_id is a container ID, not an image ID. (Use docker ps to view listing which includes container_ids.)
+
+Multiple files contained by the folder src can be copied into the target folder using:
+
+docker cp src/. container_id:/target
+docker cp container_id:/src/. target
+Reference: Docker CLI docs for cp
+
+In Docker versions prior to 1.8 it was only possible to copy files from a container to the host. Not from the host to a container.
+
+https://adamtheautomator.com/jenkins-docker/#Finding_the_Jenkins_Data_on_the_Docker_Host
+https://octopus.com/blog/jenkins-docker-install-guide
+
+
+### Backup and Restore Jenkins Data
+https://medium.com/clarusway/disaster-recovery-guide-for-jenkins-46f3a7030481
