@@ -839,3 +839,4 @@ https://medium.com/clarusway/disaster-recovery-guide-for-jenkins-46f3a7030481
 	
 ### VBA for reading aloud outlook email sender and subject on arrival (Windows only)
 https://www.datanumen.com/blogs/let-outlook-auto-read-subject-sender-incoming-email/
+https://apple.stackexchange.com/questions/335607/is-there-something-like-macros-in-outlook-2016-on-mac
