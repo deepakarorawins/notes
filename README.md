@@ -835,3 +835,7 @@ https://octopus.com/blog/jenkins-docker-install-guide
 
 ### Backup and Restore Jenkins Data
 https://medium.com/clarusway/disaster-recovery-guide-for-jenkins-46f3a7030481
+	
+	
+### VBA for reading aloud outlook email sender and subject on arrival (Windows only)
+https://www.datanumen.com/blogs/let-outlook-auto-read-subject-sender-incoming-email/
