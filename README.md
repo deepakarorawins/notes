@@ -840,3 +840,9 @@ https://medium.com/clarusway/disaster-recovery-guide-for-jenkins-46f3a7030481
 ### VBA for reading aloud outlook email sender and subject on arrival (Windows only)
 https://www.datanumen.com/blogs/let-outlook-auto-read-subject-sender-incoming-email/
 https://apple.stackexchange.com/questions/335607/is-there-something-like-macros-in-outlook-2016-on-mac
+	
+	
+### Open image full screen with "open -a Preview" Mac OS
+https://apple.stackexchange.com/questions/133311/open-image-full-screen-with-open-a-preview
+	
+open -a Preview somefile.png ; /usr/bin/osascript -e 'tell application "Preview"' -e "activate" -e 'tell application "System Events"' -e 'keystroke "f" using {control down, command down}' -e "end tell" -e "end tell"
