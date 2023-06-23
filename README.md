@@ -845,4 +845,18 @@ https://apple.stackexchange.com/questions/335607/is-there-something-like-macros-
 ### Open image full screen with "open -a Preview" Mac OS
 https://apple.stackexchange.com/questions/133311/open-image-full-screen-with-open-a-preview
 	
-open -a Preview somefile.png ; /usr/bin/osascript -e 'tell application "Preview"' -e "activate" -e 'tell application "System Events"' -e 'keystroke "f" using {control down, command down}' -e "end tell" -e "end tell"
+Execute below command in terminal:  
+```open -a Preview somefile.png ; /usr/bin/osascript -e 'tell application "Preview"' -e "activate" -e 'tell application "System Events"' -e 'keystroke "f" using {control down, command down}' -e "end tell" -e "end tell"```
+
+
+### Is there a way to make Preview not open all previously opened files?
+https://apple.stackexchange.com/questions/54854/is-there-a-way-to-make-preview-not-open-all-previously-opened-files  
+
+**Undo resume for a specific application**  
+Type the following command in the Terminal. Then restart the specific application.
+
+In general the syntax is:  
+```defaults write com."producer"."program-name" ApplePersistenceIgnoreState YES```  
+
+Thus, in your case (Preview.app) it is:  
+```defaults write com.apple.Preview ApplePersistenceIgnoreState YES```
