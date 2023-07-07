@@ -860,3 +860,9 @@ In general the syntax is:
 
 Thus, in your case (Preview.app) it is:  
 ```defaults write com.apple.Preview ApplePersistenceIgnoreState YES```
+
+
+### IOS Error Domain=kCLErrorDomain Code=0 "(null)"  
+https://stackoverflow.com/questions/32543754/ios-9-error-domain-kclerrordomain-code-0-null   
+<img width="770" alt="image" src="https://github.com/deepakarorawins/notes/assets/30565176/41f7fcbb-6f98-45b4-8441-a291de272700">
+
