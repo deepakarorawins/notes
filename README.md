@@ -389,6 +389,12 @@ appium -v
 ```
 
 
+### Updatge appium-device-farm plugin  
+```appium plugin update device-farm```  
+or  
+```appium plugin update device-farm --unsafe```
+
+
 
 ### Update Carthage
 `brew upgrade carthage`
