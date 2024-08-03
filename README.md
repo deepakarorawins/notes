@@ -872,3 +872,32 @@ Thus, in your case (Preview.app) it is:
 https://stackoverflow.com/questions/32543754/ios-9-error-domain-kclerrordomain-code-0-null   
 <img width="770" alt="image" src="https://github.com/deepakarorawins/notes/assets/30565176/41f7fcbb-6f98-45b4-8441-a291de272700">
 
+
+
+### zrok - to share localhost/local machine on publick internet
+Reserved Shares:   
+zrok shares are ephemeral unless you specifically create a "reserved" share.
+A reserved share can be re-used multiple times; it will survive termination of the zrok share command, allowing for longer-lasting semi-permanent access to shared resources.
+
+The first step is to create the reserved share:  
+```$ zrok reserve public --backend-mode proxy 8080 --unique-name abcjenkins```
+
+If we do nothing else, and then point a web browser at the frontend endpoint, we get:
+This is the 404 error message returned by the zrok frontend. We're getting this because we haven't yet started up a zrok share for the service. Let's do that with:
+
+This command:
+```zrok share reserved abcjenkins```
+
+
+Now when we navigate below url we get our page
+"https://**abcjenkins**.share.zrok.io/"
+
+
+
+
+
+
+
+
+
+
