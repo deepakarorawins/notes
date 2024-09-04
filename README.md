@@ -895,6 +895,43 @@ Now when we navigate below url we get our page
 
 
 
+### To update your master branch with the latest code from the develop branch, you can follow these steps. The idea is to reset the master branch to match the develop branch, which effectively makes master identical to develop.
+
+**Step 1: Ensure Your Local Repository is Up-to-Date**
+
+```git fetch origin```
+
+**Step 2: Switch to the develop Branch**
+
+```git checkout develop```
+
+**Step 3: Make Sure develop is Up-to-Date**
+
+```git pull origin develop```
+
+**Step 4: Delete the master Branch Locally**
+First, ensure you are not currently on the master branch:
+
+```git branch -D master```
+
+**Step 5: Create a New master Branch from develop**
+
+```git checkout -b master```
+
+**Step 6: Force Push the New master to Remote**
+This will overwrite the remote master branch with the new one from develop:
+
+```git push origin master --force```
+
+**Step 7: Set the master Branch as the Default (Optional)**
+If needed, you may want to set master as the default branch on your remote repository (e.g., GitHub or GitLab). This can typically be done in the repository settings under "Branches."
+
+Important Notes:
+Force pushing can overwrite history on the remote master branch. Make sure that this is what you intend to do, and that no one else is relying on the current state of master.
+It's generally a good idea to communicate this change to your team to avoid any confusion.
+This will result in your master branch having the same code as develop, essentially making it the new "master" branch.
+
+
 
 
 
