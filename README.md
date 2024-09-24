@@ -933,8 +933,103 @@ This will result in your master branch having the same code as develop, essentia
 
 
 
+### Start Appium
+``` public void startAppium() {
+        try {
+            String ipAddress = getLocalIpAddress();
+            utils.setAppiumPort(String.valueOf(findFreePort()));
+            //utils.setAppiumPort("4723");
+            Runtime rt = Runtime.getRuntime();
+            rt.exec("appium --address 127.0.0.1 --port "+utils.getAppiumPort()+" --log ServerLogs/server.log");
+            //rt.exec("appium --address 127.0.0.1 --port "+utils.getAppiumPort()+" --log ServerLogs/server.log --use-plugin=appium-dashboard");
+            //rt.exec("appium server -ka 800 --use-plugins=appium-dashboard --log ServerLogs/server.log");
+            //rt.exec("appium server -ka 800 --use-plugins=appium-dashboard --plugin-device-farm-platform=ios --address 127.0.0.1 --port 4723 --log ServerLogs/server.log");
+            //rt.exec("appium server -ka 800 --use-plugins=appium-dashboard --address 127.0.0.1 --port 4723 --log ServerLogs/server.log");
+            //rt.exec("appium server -ka 800 --use-plugins=element-wait,device-farm,appium-dashboard --plugin-device-farm-platform=ios --plugin-device-farm-device-types=real");
+            //wait for appium server to finish booting
+            //Thread.sleep(5000);
+            // Wait for the server to be available
+            waitForServer(30,"http://127.0.0.1:" + utils.getAppiumPort() + "/status");
+            utils.log().debug("Started Appium Server on port "+utils.getAppiumPort());
+            utils.log().info("\uD83D\uDCE3\uD83D\uDCE3\uD83D\uDCE3 Dashboard Plugin will be served (if available) on node machine at \uD83D\uDD17 http://localhost:"+utils.getAppiumPort()+"/dashboard");
+            // Open the dashboard URL in the default web browser
 
 
+
+        } catch (Exception e) {
+            utils.log().error("Failed While Starting Appium Server");
+        }
+    }
+
+    public void stopAppium() {
+        try {
+            Runtime rt = Runtime.getRuntime();
+            //Process proc = rt.exec("appium --address 127.0.0.1 --port 4723");
+            Process proc = rt.exec("pkill -f appium");
+            proc.waitFor();
+            utils.log().debug("Stopped Appium Server");
+
+        } catch (Exception e) {
+            utils.log().error("Failed While Stopping Appium Server");
+        }
+    }
+
+    private void waitForServer(int maxTry, String url) throws InterruptedException {
+        int attempts = 0;
+        int maxAttempts = maxTry; // Maximum number of attempts
+        int waitTime = 1000; // Wait time between attempts in milliseconds
+
+        while (attempts < maxAttempts) {
+            try {
+                HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+                connection.setRequestMethod("GET");
+                connection.connect();
+                int responseCode = connection.getResponseCode();
+                if (responseCode == 200) {
+                    System.out.println("Appium server is up and running!");
+                    return;
+                }
+            } catch (IOException e) {
+                // Server is not up yet
+            }
+            System.out.println("Waiting for Appium server... "+attempts);
+            Thread.sleep(waitTime);
+            attempts++;
+        }
+        utils.log().debug("Waited "+ attempts+ " seconds for appium server to start.");
+        //throw new RuntimeException("Appium server did not start within the expected time.");
+    }
+
+    private String getLocalIpAddress() {
+        try {
+            InetAddress localHost = InetAddress.getLocalHost();
+            return localHost.getHostAddress();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            return "127.0.0.1"; // Fallback to localhost in case of an error
+        }
+    }
+
+private void openBrowser(String url) {
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.browse(new URI(url));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.err.println("Desktop is not supported on this platform");
+        }
+    }
+
+```
+
+### Read java parameter from console
+```
+String env = Optional.ofNullable(System.getProperty("environment")).orElse("test");
+Optional<String> appVersion = Optional.ofNullable(System.getProperty("appVersion"));
+```
 
 
 
