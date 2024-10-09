@@ -1035,3 +1035,74 @@ Optional<String> appVersion = Optional.ofNullable(System.getProperty("appVersion
 ### codesign repeatedly asks for access to System Keychain or Codesign wants to access key "access" in your keychain, I put in my login password but keeps asking me
 
 **Solution**: For me the issue that the certificate was installed under "system", rather than "login". All I had to do was remove it from system, then open "login" and drag the certificate into Keychain.
+
+
+### No such command issue: https://docs.digital.ai/bundle/TDB/page/seetestautomation_-_generate_device_enablement_file_def_using_xdef.html
+
+When you're in the folder containing the executable, you need to explicitly tell the shell to run the command from the current directory. By default, the shell doesn’t search in the current directory for executables.
+
+This example will use the command 'teams' without the account parameters:
+Try running it like this:```./xdef teams```
+The user is required to insert Apple ID and password.
+
+Note: after 10 failures in logging in, your developer account will be locked. Go to https://developer.apple.com/ in order to re-open it.  
+
+The devices file is a text file, containing udids and names.
+Create a text file like this, it can have multiple phones...
+
+
+```00008030-001A20AE36F9402E,ios_app:OKAUTO_iPhone_SE_12```
+
+
+Details:
+SeeTestAutomation - Generate Device Enablement File (DEF) Using XDEF
+The motivation of this tool is to enable distribution of apple provisioning profile, without sharing your apple developer account username and password.
+
+XDef CLI Utility helps you to generate a Device Enablement file (.DEF) using your own iOS Developer profile account credentials.
+
+Device Enablement Files will contain your developer certificate and mobile provision file and they will allow you to work with your iOS device and install applications on the device.
+Prerequisites
+Installed SeeTestAutomation or Appium Studio (version10.3 and above).
+To be assigned to valid Apple Developer Account.
+Commands Description
+
+
+**help**	none	Prints help messages to the console
+**version**	none	Prints the product version
+**teams**	Prints the developer teams list for Apple ID
+[-appleId <appleId>]	Apple Id of the account
+[-password <password>]	Password of the Apple Id
+[-json]	Prints the data in JSON format
+[-v]	Verbose (print log to console)
+
+
+
+**def** 	Creating def file from developer team
+[-appleId <appleId>]	Apple Id of the account
+[-password <password>]	Password of the Apple Id
+[-teamId <teamId>]	Team Id of the account (obtained from teams command)
+-devicesPath <devicesPath>	Path to details of devices to be added to profile (the format is udid,deviceName)
+-p12Pwd <p12Pwd>  	Password for saving the p12 file / reloading it
+[-v]	Verbose (print log to console)
+
+**log** 	Path to log file
+[-v]	Verbose (print log to console)
+
+This example will use the 'def' command  the account parameters and the team ID:
+1. The devices file is a text file, containing udids and names. Example:
+
+   Create a text file like this, it can have multiple phones...
+```00008030-001A20AE36F9402E,ios_app:OKAUTO_iPhone_SE_12```
+The tool will cross this device list with the devices that are already on account. Only new devices will be added to the account.
+The generated profile will contain all the devices that were on the account and the new ones.
+
+```./xdef def -appleId abc@gmail.com -password <App Specific password> -teamId NX6RR6GSKK -devicesPath /Users/jenkins/devicefile.txt -p12Pwd miP4cvma```
+
+The def command will generate a .p12 file on your computer. The .p12 file is a new development certificate on your apple account. The file can be located on \xdef\apple-accounts\<Apple ID>\<team ID\keys
+
+The def file is located on \xdef\apple-accounts\<Apple ID>\<team ID\def
+
+
+Note: This will create a wild card app id in apple dev account
+Experitest WildCard = * (wildcard)
+
