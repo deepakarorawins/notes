@@ -1032,4 +1032,6 @@ Optional<String> appVersion = Optional.ofNullable(System.getProperty("appVersion
 ```
 
 
+### codesign repeatedly asks for access to System Keychain or Codesign wants to access key "access" in your keychain, I put in my login password but keeps asking me
 
+**Solution**: For me the issue that the certificate was installed under "system", rather than "login". All I had to do was remove it from system, then open "login" and drag the certificate into Keychain.
