@@ -1106,3 +1106,58 @@ The def file is located on \xdef\apple-accounts\<Apple ID>\<team ID\def
 Note: This will create a wild card app id in apple dev account
 Experitest WildCard = * (wildcard)
 
+
+
+
+
+### launchAppWithArgs
+```public void launchAppWithArgs() {
+        StopWatch stopwatch = new StopWatch();
+        stopwatch.start();
+
+        try {
+            // Check the platform name (iOS or Android)
+            String platformName = getDriver().getCapabilities().getCapability("platformName").toString();
+
+            if ("iOS".equalsIgnoreCase(platformName) && !(getEnvironment().equals("prod"))  ) {
+                // Get app information
+                String appPath = getDriver().getCapabilities().getCapability("app").toString();
+                // iOS specific steps
+                String bundleId = getDriver().getCapabilities().getCapability("bundleId").toString();
+                String[] arguments = {"--qamode"};
+
+                Map<String, Object> args = new HashMap<>();
+                args.put("bundleId", bundleId);
+                args.put("app", appPath);
+                args.put("arguments", arguments);
+                getDriver().executeScript("mobile: removeApp", args);
+                getDriver().executeScript("mobile: installApp", args);
+                getDriver().executeScript("mobile: launchApp", args);
+            }
+            else if ("iOS".equalsIgnoreCase(platformName) && (getEnvironment().equals("prod"))  ) {
+                String bundleId = getDriver().getCapabilities().getCapability("bundleId").toString();
+                Map<String, Object> args = new HashMap<>();
+                args.put("bundleId", bundleId);
+                getDriver().executeScript("mobile: launchApp", args);
+            }
+
+            else if ("Android".equalsIgnoreCase(platformName)) {
+            	
+            } else {
+                // Handle other platforms (if needed)
+                // For unsupported platforms
+                throw new UnsupportedOperationException("Unsupported platform: " + platformName);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Exception occurred while launching the app");
+        }
+
+        stopwatch.stop(); // Optional
+        long timeElapsed = stopwatch.getTime(TimeUnit.SECONDS);
+        utils.logInfo(String.format("########################################### Total Execution time to removeApp, installApp, and launchApp in seconds: %d", timeElapsed));
+    }
+```
+
+
+
