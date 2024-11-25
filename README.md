@@ -1160,4 +1160,7 @@ Experitest WildCard = * (wildcard)
 ```
 
 
+### When we have wider excel sheet and want to print on single page:   
+https://support.microsoft.com/en-us/office/video-print-a-worksheet-on-a-specific-number-of-pages-bc7d8a8b-48a1-485c-a091-23fb9f300a57
+
 
